@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using XpandIT.Challenge.DataLayer;
+using XpandIT.Challenge.DataLayer.Seeders;
 
 namespace XpandIT.Challenge
 {
@@ -58,6 +59,8 @@ namespace XpandIT.Challenge
 
             var dbContext = scope.ServiceProvider.GetRequiredService<XpandITDbContext>();
             dbContext.Database.EnsureCreated();
+
+            DbInitializer.Initialize(dbContext);
         }
     }
 }
