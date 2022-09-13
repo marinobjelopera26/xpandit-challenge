@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using XpandIT.Challenge.Data;
+using XpandIT.Challenge.DataLayer;
 
 namespace XpandIT.Challenge
 {
@@ -14,13 +14,13 @@ namespace XpandIT.Challenge
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
                 ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            builder.Services.AddDbContext<XpandITDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<XpandITDbContext>();
             builder.Services.AddRazorPages();
 
             var app = builder.Build();
@@ -37,6 +37,8 @@ namespace XpandIT.Challenge
                 app.UseHsts();
             }
 
+            EnsureDatabaseCreated(app);
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -48,6 +50,14 @@ namespace XpandIT.Challenge
             app.MapRazorPages();
 
             app.Run();
+        }
+
+        public static void EnsureDatabaseCreated(WebApplication app)
+        {
+            using var scope = app.Services.CreateScope();
+
+            var dbContext = scope.ServiceProvider.GetRequiredService<XpandITDbContext>();
+            dbContext.Database.EnsureCreated();
         }
     }
 }
