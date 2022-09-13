@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace XpandIT.Challenge.Data.Migrations
+namespace XpandIT.Challenge.DataLayer.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {
