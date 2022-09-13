@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using XpandIT.Challenge.DataLayer;
-using XpandIT.Challenge.DataLayer.Seeders;
 
 namespace XpandIT.Challenge
 {
