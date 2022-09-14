@@ -13,10 +13,17 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\XpandIT.Challenge.DataLayer\XpandIT.Challenge.DataLayer.csproj" />
+    <ProjectReference Include="..\XpandIT.Challenge.Model\XpandIT.Challenge.Model.csproj" />
+    <ProjectReference Include="..\XpandIT.Challenge.Services\XpandIT.Challenge.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\ContactGroups\" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,80 @@
+﻿@page
+@using System.Text
+@model XpandIT.Challenge.Pages.Contacts.DetailsModel
+
+@{
+}
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-9 col-md-7 col-lg-5 align-items-center justify-content-center">
+            <div class="row justify-content-center">
+                @if (Model.ContactDetails?.Image?.Length > 0 == true)
+                {
+                    string base64 = Convert.ToBase64String(Model.ContactDetails.Image);
+                    <div class="d-flex justify-content-center">
+                        <img class="img-fluid"
+                             style="max-width: 150px; max-height: 150px; border-radius:50%;"
+                             src="data:image/png;base64, @base64" 
+                             alt="Contact image" />
+                    </div>
+                }
+                else
+                {
+                    <div class="d-flex align-items-center justify-content-center bg-dark"
+                     style="height: 150px; width: 150px; border-radius:50%; font-size: 3.5rem;">
+                        <span class="text-light">@Model.ContactDetails!.Initials</span>
+                    </div>
+                }
+            </div>
+
+            <div class="row mt-4">
+                <h2 class="pb-3 text-center">@Model.ContactDetails.Name</h2>
+                <hr />
+            </div>
+
+            @if (!string.IsNullOrEmpty(Model.ContactDetails?.EmailAddress))
+            {
+                <div class="row">
+                    <div>
+                        <span class="text-info font-weight-bold">Email</span>
+                        <span class="text-black small">@Model.ContactDetails.EmailAddress</span>
+                    </div>
+                </div>
+            }
+
+            @if (!string.IsNullOrEmpty(Model.ContactDetails?.Address))
+            {
+                <div class="row">
+                    <div>
+                        <span class="text-info font-weight-bold">Address</span>
+                        <span class="text-black small">@Model.ContactDetails.Address</span>
+                    </div>
+                </div>
+            }
+
+            <div class="row">
+                <div class="mt-4">
+                    <h6>Phone numbers</h6>
+                    @if (Model.ContactDetails?.PhoneNumbers?.Count() > 0 == true)
+                    {
+                        @foreach (var phoneNumber in Model.ContactDetails.PhoneNumbers)
+                        {
+                            <div>@phoneNumber.Type</div>
+                            <div>@phoneNumber.Value</div>
+                        }
+                    }
+                    else
+                    {
+                        <span class="text-danger">Contact has no phone numbers assigned.</span>
+                    }
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <a asp-page="/Contacts/Index" class="link-primary">&lt; Back to Contact List</a>
+            </div>
+        </div>
+    </div>
+</div>

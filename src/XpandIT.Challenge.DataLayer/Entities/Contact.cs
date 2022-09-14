@@ -19,6 +19,9 @@ namespace XpandIT.Challenge.DataLayer.Entities
         [MaxLength(100)]
         public string? EmailAddress { get; set; }
 
+        [MaxLength(250)]
+        public string? Address { get; set; }
+
 
         public IdentityUser? User { get; set; }
         public ICollection<ContactPhoneNumber>? PhoneNumbers { get; set; }

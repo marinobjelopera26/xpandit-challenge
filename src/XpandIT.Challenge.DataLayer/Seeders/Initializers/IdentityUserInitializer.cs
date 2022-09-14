@@ -23,7 +23,10 @@ namespace XpandIT.Challenge.DataLayer.Seeders.Initializers
                 LockoutEnabled = false,
             };
 
-            passwordHasher.HashPassword(adminUser, "Admin!2#4");
+            adminUser.PasswordHash = passwordHasher.HashPassword(adminUser, "Admin!2#4");
+            adminUser.NormalizedUserName = adminUser.UserName.ToUpper();
+            adminUser.NormalizedEmail = adminUser.Email.ToUpper();
+
             identityUsers.Add(adminUser);
 
             IdentityUser testUser = new()
