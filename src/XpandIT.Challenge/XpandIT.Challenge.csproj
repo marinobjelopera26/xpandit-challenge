@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-XpandIT.Challenge-598221CC-D929-4616-A126-E1FC42B4DB6F</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.8" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\XpandIT.Challenge.DataLayer\XpandIT.Challenge.DataLayer.csproj" />
+    <ProjectReference Include="..\XpandIT.Challenge.Model\XpandIT.Challenge.Model.csproj" />
+    <ProjectReference Include="..\XpandIT.Challenge.Services\XpandIT.Challenge.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\ContactGroups\" />
+  </ItemGroup>
+
+</Project>
