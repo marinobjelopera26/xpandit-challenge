@@ -12,16 +12,18 @@ namespace XpandIT.Challenge
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") 
-                ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+            string connectionString = builder.Configuration.GetConnectionString("XpandIT") 
+                ?? throw new InvalidOperationException("Connection string 'XpandIT' not found.");
 
             builder.Services.AddDbContext<XpandITDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            builder.Services
+                .AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<XpandITDbContext>();
+
             builder.Services.AddRazorPages();
 
             var app = builder.Build();
