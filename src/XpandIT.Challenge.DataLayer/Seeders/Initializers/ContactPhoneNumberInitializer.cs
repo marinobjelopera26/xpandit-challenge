@@ -10,6 +10,9 @@ namespace XpandIT.Challenge.DataLayer.Seeders.Initializers
         {
             EnsureDbContextExists();
 
+            if (DbContext!.Contacts?.All(x => x.PhoneNumbers == null) == false)
+                return;
+
             foreach (Contact contact in DbContext!.Contacts!.ToList())
             {
                 contact.PhoneNumbers ??= new List<ContactPhoneNumber>();
