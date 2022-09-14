@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XpandIT.Challenge", "src\XpandIT.Challenge\XpandIT.Challenge.csproj", "{57C8E40D-A239-4776-8F6C-377896B39A10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2961E198-3932-4027-845C-B7EBFCCBDE10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{706354E9-368F-41B5-A411-A8C5023DE687}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5D61D182-9B1D-4EE6-A7D5-70F38C832FDF}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XpandIT.Challenge.DataLayer", "src\XpandIT.Challenge.DataLayer\XpandIT.Challenge.DataLayer.csproj", "{88B51F56-6498-470A-9C64-4C391AD0308E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XpandIT.Challenge.Model", "src\XpandIT.Challenge.Model\XpandIT.Challenge.Model.csproj", "{12DFA605-7FAC-40E3-8BE6-25773814B311}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XpandIT.Challenge.Services", "src\XpandIT.Challenge.Services\XpandIT.Challenge.Services.csproj", "{54CE1902-6201-4628-9075-ED925CA7926E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57C8E40D-A239-4776-8F6C-377896B39A10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C8E40D-A239-4776-8F6C-377896B39A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C8E40D-A239-4776-8F6C-377896B39A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C8E40D-A239-4776-8F6C-377896B39A10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B51F56-6498-470A-9C64-4C391AD0308E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B51F56-6498-470A-9C64-4C391AD0308E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B51F56-6498-470A-9C64-4C391AD0308E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B51F56-6498-470A-9C64-4C391AD0308E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12DFA605-7FAC-40E3-8BE6-25773814B311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12DFA605-7FAC-40E3-8BE6-25773814B311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12DFA605-7FAC-40E3-8BE6-25773814B311}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12DFA605-7FAC-40E3-8BE6-25773814B311}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54CE1902-6201-4628-9075-ED925CA7926E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54CE1902-6201-4628-9075-ED925CA7926E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54CE1902-6201-4628-9075-ED925CA7926E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54CE1902-6201-4628-9075-ED925CA7926E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{57C8E40D-A239-4776-8F6C-377896B39A10} = {2961E198-3932-4027-845C-B7EBFCCBDE10}
+		{88B51F56-6498-470A-9C64-4C391AD0308E} = {2961E198-3932-4027-845C-B7EBFCCBDE10}
+		{12DFA605-7FAC-40E3-8BE6-25773814B311} = {2961E198-3932-4027-845C-B7EBFCCBDE10}
+		{54CE1902-6201-4628-9075-ED925CA7926E} = {2961E198-3932-4027-845C-B7EBFCCBDE10}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3584698F-7C04-48C3-8D54-9AE6EDEE9D3B}
+	EndGlobalSection
+EndGlobal
