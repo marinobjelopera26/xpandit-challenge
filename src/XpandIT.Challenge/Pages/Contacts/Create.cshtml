@@ -1,0 +1,59 @@
+﻿@page
+@using XpandIT.Challenge.Models
+@model XpandIT.Challenge.Pages.Contacts.CreateModel
+@{
+    ViewData["Title"] = "Add Contact";
+}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+            <section>
+                <form id="add-contact" method="post" enctype="multipart/form-data">
+                    <h2>Add a new contact.</h2>
+                    <hr />
+                    <div class="mt-4"></div>
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Input.Image" class="form-label"></label>
+                        <input asp-for="Input.Image" type="file" class="form-control" />
+                        <span asp-validation-for="Input.Image" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.FirstName" class="form-control" type="text" autocomplete="given-name" aria-required="true" />
+                        <label asp-for="Input.FirstName" class="form-label"></label>
+                        <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.LastName" class="form-control" type="text" autocomplete="family-name" aria-required="true" />
+                        <label asp-for="Input.LastName" class="form-label"></label>
+                        <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.EmailAddress" class="form-control" type="email" autocomplete="email" aria-required="true" />
+                        <label asp-for="Input.EmailAddress" class="form-label"></label>
+                        <span asp-validation-for="Input.EmailAddress" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.Address" class="form-control" type="text" autocomplete="street-address" />
+                        <label asp-for="Input.Address" class="form-label"></label>
+                        <span asp-validation-for="Input.Address" class="text-danger"></span>
+                    </div>
+
+                    <div>
+                        <button id="add-contact-submit" type="submit" class="w-100 btn btn-lg btn-dark">Add Contact</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

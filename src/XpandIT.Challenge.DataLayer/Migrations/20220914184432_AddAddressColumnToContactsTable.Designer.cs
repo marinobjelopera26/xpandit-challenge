@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using XpandIT.Challenge.DataLayer;
 
@@ -11,9 +12,10 @@ using XpandIT.Challenge.DataLayer;
 namespace XpandIT.Challenge.DataLayer.Migrations
 {
     [DbContext(typeof(XpandITDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220914184432_AddAddressColumnToContactsTable")]
+    partial class AddAddressColumnToContactsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

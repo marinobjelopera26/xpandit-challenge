@@ -1,0 +1,69 @@
+﻿@page
+@model XpandIT.Challenge.Pages.Contacts.IndexModel
+
+@{
+    ViewData["Title"] = "Contacts";
+}
+
+<div class="container">
+    <div class="row justify-content-end">
+        <div class="col-10 col-md-6 col-lg-5 col-xl-4">
+            <div class="input-group mb-3 justify-content-end">
+                <form class="d-flex m-0">
+                    <div class="form-outline">
+                        <input asp-for="SearchString"
+                               type="search"
+                               id="search-contacts"
+                               class="form-control"
+                               placeholder="Contact name..." />
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <table class="table table-borderless table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Contact name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Email</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.ContactList.Items)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Address</td>
+                <td>@item.EmailAddress</td>
+                <td>
+                    <a asp-page="/Contacts/Edit" asp-route-id="@item.Id">Edit</a>
+                    <a asp-page="/Contacts/Details" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </table>
+    @if (string.IsNullOrEmpty(Model.SearchString))
+    {
+        <nav>
+            <ul class="pagination justify-content-end">
+                <li class="page-item @(Model.CurrentPage == 1 ? "disabled" : "")">
+                    <a asp-page="/Contacts/Index" asp-route-currentpage="@(Model.CurrentPage - 1)" class="page-link">Previous</a>
+                </li>
+                @for (var i = 1; i <= Model.TotalPages; i++)
+                {
+                    <li class="page-item @(i == Model.CurrentPage ? "active" : "")">
+                        <a asp-page="/Contacts/Index" asp-route-currentpage="@i" class="page-link">@i</a>
+                    </li>
+                }
+                <li class="page-item @(Model.CurrentPage == Model.TotalPages ? "disabled" : "")">
+                <a asp-page="/Contacts/Index" asp-route-currentpage="@(Model.CurrentPage + 1)" class="page-link">Next</a>
+            </li>
+        </ul>
+    </nav>
+    }
+
+    <a asp-page="/Contacts/Create" class="btn btn-primary">Add new contact</a>
+</div>

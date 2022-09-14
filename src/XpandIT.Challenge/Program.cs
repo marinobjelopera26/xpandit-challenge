@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using XpandIT.Challenge.DataLayer;
+using XpandIT.Challenge.DataLayer.Providers;
 using XpandIT.Challenge.DataLayer.Seeders;
+using XpandIT.Challenge.Extensions;
 
 namespace XpandIT.Challenge
 {
@@ -23,6 +25,10 @@ namespace XpandIT.Challenge
             builder.Services
                 .AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<XpandITDbContext>();
+
+            builder.Services
+                .RegisterDbRepositories()
+                .RegisterApplicationServices();
 
             builder.Services.AddRazorPages();
 
