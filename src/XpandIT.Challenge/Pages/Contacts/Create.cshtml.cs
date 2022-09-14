@@ -3,8 +3,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System.IO;
 using XpandIT.Challenge.Model.Contacts;
 using XpandIT.Challenge.Models;
 using XpandIT.Challenge.Services.Contacts;
@@ -30,15 +28,6 @@ namespace XpandIT.Challenge.Pages.Contacts
 
         [BindProperty]
         public AddContactVm Input { get; set; }
-
-        public async Task AddPhoneNumber()
-        {
-            var phoneNumberVm = new AddPhoneNumberVm();
-            var availablePhoneNumberTypes = await _phoneNumberService.GetAvailablePhoneNumberTypesAsync();
-            phoneNumberVm.AvailableTypes = new SelectList(availablePhoneNumberTypes, dataValueField: "Id", dataTextField: "Name");
-
-            Input.PhoneNumbers.Add(phoneNumberVm);
-        }
 
         public void OnGet()
         {

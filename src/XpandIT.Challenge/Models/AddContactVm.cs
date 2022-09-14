@@ -21,8 +21,5 @@ namespace XpandIT.Challenge.Models
 
         [EmailAddress]
         public string EmailAddress { get; set; }
-
-        //[Required]
-        public ICollection<AddPhoneNumberVm> PhoneNumbers { get; set; }
     }
 }
